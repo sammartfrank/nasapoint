@@ -1,0 +1,12 @@
+.scrollBut {
+ position: fixed;
+ bottom: 20px;
+ background:white;
+ right: 20px;
+ width: 80px;
+ height: 80px;
+ border-radius: 50%;
+ font-weight: 600;
+ box-shadow: 0px 8px 0px 0px #f2f2f2;
+ color: #033280;
+}

@@ -1,0 +1,41 @@
+
+
+/*mobile first */
+.header {
+ background:#0a3d91;
+ box-shadow: 0px 5px 5px 0px rgba(0,0,0, 0.3);
+ width: 100%;
+ text-align:center;
+}
+.header h1 {
+ font-size: 2rem;
+ color: white;
+ padding-bottom:0.2em;
+ letter-spacing: 0.2em;
+ transition: background 1s ease;
+}
+.sticky {
+ position: fixed;
+ top:0;
+ height:19%;
+ margin:0 auto;
+ padding: 0;
+ background: linear-gradient(#033280, #0a3d91)
+}
+.sticky h1 {
+ font-size:0;
+}
+
+.header .logo {
+ width:8em;
+ position:relative;
+ top: 0.9em;
+ left: 0.2em;
+}
+
+
+
+@media (max-width: 768px) {
+ 
+
+}

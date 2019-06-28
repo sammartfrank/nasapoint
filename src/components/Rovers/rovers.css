@@ -1,0 +1,47 @@
+.rover-container {
+ text-align:center;
+ color:darkblue;
+ width: 75%;
+ margin: 0 auto;
+}
+
+.roverimg img {
+ margin-top: 1em;
+ width: 100%;
+}
+.images {
+display: inline;
+}
+select {
+ width: 100%;
+}
+input {
+ width: 100%;
+ margin: 0 auto;
+}
+
+
+@media (min-width: 768px) {
+
+ .rover-container {
+  width: 60%;
+ }
+
+ .rover-container select {
+  width: 50%;
+  text-align:center;
+ }
+
+ .rover-container input {
+  width: 50%;
+ }
+
+ .images {
+  width:100%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-column-gap: 2em;
+  grid-row-gap: 2em;
+ }
+
+}

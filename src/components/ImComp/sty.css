@@ -1,0 +1,51 @@
+.search-container {
+ margin: 0 auto;
+ text-align: center;
+ width: 60%;
+ color: darkblue;
+}
+
+
+.queryImg {
+ display: inline;
+}
+
+.queryImg p {
+ width: 100%;
+ margin:0 auto;
+ /*text-align:justify;*/
+}
+.queryImg img {
+ width:100%;
+}
+.search-contianer input {
+ transition: width 2s  cubic-bezier(0.1, 0.7, 1.0, 0.1);
+}
+
+@media (min-width: 768px) {
+ .search-container {
+  width: 50%;
+ }
+.search-container form {
+ margin: 0 auto;
+ width: 40%;
+}
+ .search-container input {
+  width: 35%;
+  margin: 0 auto;
+ }
+ .search-container input:focus {
+  width: 60%;
+ }
+ .queryImg {
+ display: grid;
+ grid-template-columns: 50% 50%;
+ grid-column-gap: 2em;
+ grid-row-gap: 2em;
+}
+.queryImg p {
+ width: 100%;
+}
+
+
+}
