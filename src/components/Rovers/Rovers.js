@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { getImags } from '../../utils/Nasapi.js';
 import LoadingRover from '../Loading/LoadingRover.js';
+import Modal from '../Modal/Modal.js';
 import './rovers.css';
 
 class Rovers extends Component {
@@ -11,13 +12,27 @@ class Rovers extends Component {
    sol: 0,
    camera: 'fhaz',
    loadingB: false,
-   values: {}
+   values: {},
+   show: false
   }
 
   this.handleChange = this.handleChange.bind(this);
   this.handleCamera = this.handleCamera.bind(this);
   this.handleInputChange = this.handleInputChange.bind(this)
   this.handleClick = this.handleClick.bind(this);
+  this.showModal = this.showModal.bind(this);
+  this.hideModal = this.hideModal.bind(this);
+  }
+
+  showModal() {
+    this.setState({
+      show: true
+    })
+  }
+  hideModal() {
+    this.setState({
+      show: false
+    })
   }
 
   handleCamera(e) {
@@ -50,7 +65,7 @@ class Rovers extends Component {
   }
   render() {
    console.log('[DATA ON ROVER]', this.state);
-   const { rover, sol, camera, loadingB, values } = this.state;
+   const { rover, sol, camera, loadingB, values, show } = this.state;
    return (
     <div className="rover-container">
      <h1>Rover Photos</h1>
@@ -78,7 +93,7 @@ class Rovers extends Component {
       <br/>
       <button onClick={this.handleClick}>Search Images</button>
       <br/>
-       {loadingB && <LoadingRover rover={this.state.rover}/>}
+       {loadingB && <LoadingRover rover={rover}/>}
       <div className="images">
        {values.photos && values.photos.map(p=> <div key={p.id} className="roverimg">
         <img src={p.img_src} alt=""/>

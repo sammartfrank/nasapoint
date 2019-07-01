@@ -13,40 +13,42 @@ class App extends Component {
  constructor(props) {
   super(props)
   this.state = {
-    visible: false
+    showPanel: false
   }
   this.handleScroll = this.handleScroll.bind(this)
  }
- handleScroll() {
-   if (window.scrollY > 350) {
-    this.setState({
-      visible: true
-    })
-   }
-   else {
-    this.setState({
-      visible: false
-    })
-   }
-  }
+ componentDidMount() {
+  window.addEventListener('scroll', this.handleScroll);
+ }
+
+ shouldComponentUpdate(nextProps, newState) {
+  return this.state.showPanel !== newState.showPanel;
+ }
+
+ componentWillUnmount() {
+  window.removeEventListener('scroll', this.handleScroll)
+ }
+
+ handleScroll(e) {
+  e.preventDefault();
+  this.setState({
+    showPanel: e.currentTarget.pageYOffset > 200
+  })
+ }
   // TODO:
   // MODALS
   // DYNAMIC STICKY HEADER
 
  render() {
-  document.body.onscroll = this.handleScroll;
-  const { visible } = this.state
+  const { showPanel } = this.state
+  {console.log('[App Rendering]')}
   return (
     <div className="container">
-      <div>
-       <Header state={visible}/>
-       <div>
+        <Header state={showPanel}/>
         <Apod />
         <Rover />
         <ImComp />
-       </div>
-       { visible && <ScrollBut />} 
-      </div>
+       { showPanel && <ScrollBut />} 
     </div>
    )
  }
