@@ -37,6 +37,7 @@ class ImComp extends Component {
  }
  render() {
     const {loading, q, queryRes } = this.state;
+    {console.log('[Library Search Rendering]')}
     return (
     <div className="search-container">
       <h1>Image Search Engine</h1>

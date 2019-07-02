@@ -24,12 +24,14 @@
  }
  .apod-container img {
  width: 50%;
-}
-.apod-container p {
- width: 50%;
-
-}
-
+	}
+	.apod-container p {
+	 width: 50%;
+	}
+	.video iframe {
+		width: 50%;
+		margin: 0 auto;
+	}
 }
 
 

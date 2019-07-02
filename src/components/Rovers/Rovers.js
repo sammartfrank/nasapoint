@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import { getImags } from '../../utils/Nasapi.js';
 import LoadingRover from '../Loading/LoadingRover.js';
+import Modal from '../Modal/Modal.js';
+import ImageTile from'./ImageTile.js';
 import './rovers.css';
 
 class Rovers extends Component {
   constructor(props) {
   super(props);
   this.state = {
+   show: false,
    rover: 'curiosity',
    sol: 0,
    camera: 'fhaz',
@@ -18,8 +21,13 @@ class Rovers extends Component {
   this.handleCamera = this.handleCamera.bind(this);
   this.handleInputChange = this.handleInputChange.bind(this)
   this.handleClick = this.handleClick.bind(this);
+  this.handleClear = this.handleClear.bind(this);
   }
-
+  handleClear(e) {
+    this.setState({
+      values: {}
+    })
+  }
   handleCamera(e) {
    this.setState({
     camera: e.target.value
@@ -41,7 +49,8 @@ class Rovers extends Component {
    this.setState({
     loadingB: true
    })
-   getImags(rover, sol, camera).then(data => {
+   getImags(rover, sol, camera)
+   .then(data => {
     this.setState({
      values: data,
      loadingB: false
@@ -49,8 +58,8 @@ class Rovers extends Component {
    })
   }
   render() {
-   console.log('[DATA ON ROVER]', this.state);
-   const { rover, sol, camera, loadingB, values } = this.state;
+   console.log('[Rover Rendering]', this.state);
+   const { show, rover, sol, camera, loadingB, values } = this.state;
    return (
     <div className="rover-container">
      <h1>Rover Photos</h1>
@@ -77,12 +86,11 @@ class Rovers extends Component {
       <br/>
       <br/>
       <button onClick={this.handleClick}>Search Images</button>
+      <button onClick={this.handleClear}>Clear</button>
       <br/>
        {loadingB && <LoadingRover rover={this.state.rover}/>}
       <div className="images">
-       {values.photos && values.photos.map(p=> <div key={p.id} className="roverimg">
-        <img src={p.img_src} alt=""/>
-       </div>)}
+       {values.photos && values.photos.map(p=> <ImageTile key={p.id} url={p.img_src} />)}
        {values.photos < 1 && <div>
          <h3>No Photos to show</h3>
        </div>}

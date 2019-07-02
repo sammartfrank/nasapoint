@@ -13,39 +13,49 @@ class App extends Component {
  constructor(props) {
   super(props)
   this.state = {
-    visible: false
+    showPanels: false
+
   }
-  this.handleScroll = this.handleScroll.bind(this)
+  this.handleScroll = this.handleScroll.bind(this);
  }
- handleScroll() {
-   if (window.scrollY > 350) {
-    this.setState({
-      visible: true
-    })
-   }
-   else {
-    this.setState({
-      visible: false
-    })
-   }
+
+ componentDidMount() {
+  window.addEventListener('scroll', this.handleScroll)
+ }
+
+ shouldComponentUpdate(newProps, newState) {
+    // only render if the state has changed
+    return this.state.showPanels !== newState.showPanels;
+}
+componentWillUnmount(){
+  window.removeEventListener('scroll', this.handleScroll)
+}
+
+
+
+
+ handleScroll(e) {
+  e.preventDefault();
+  // console.log('[e Scroll Target body]', e.currentTarget.pageYOffset)
+  this.setState({
+    showPanels: e.currentTarget.pageYOffset > 200
+  })
   }
   // TODO:
-  // MODALS
-  // DYNAMIC STICKY HEADER
+    // MODALS for Image Library
+    // Image Description to long, view more button.
+    //padding on modals
 
  render() {
-  document.body.onscroll = this.handleScroll;
-  const { visible } = this.state
+  const { showPanels } = this.state
   return (
     <div className="container">
       <div>
-       <Header state={visible}/>
-       <div>
-        <Apod />
-        <Rover />
-        <ImComp />
-       </div>
-       { visible && <ScrollBut />} 
+          <Header state={showPanels}/>
+          <Apod/>
+          <Rover />
+          <ImComp />
+       { showPanels && <ScrollBut />} 
       </div>
     </div>
    )

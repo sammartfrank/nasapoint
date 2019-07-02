@@ -24,6 +24,9 @@ select {
  font-weight: 500;
  text-align: center;
 }
+select:hover {
+	cursor:pointer;
+}
 select:focus {
   outline: none !important;
 }
@@ -44,17 +47,19 @@ input[type=number]::-webkit-outer-spin-button {
 }
 button {
  padding: 1.4em;
+
  border: 0.1em solid #0a3d91;
  border-radius: 9%;
  font-size: 1em;
  font-weight: 500;
  transition: background-color 1s ease;
  background: transparent;
- margin-bottom: 1em;
+ margin: 1em;
 }
 button:hover {
  background-color: #0a3d91;
  color: white;
+ cursor: pointer;
 }
 .container{
   position: relative;
