@@ -1,7 +1,16 @@
 import React from 'react'
 
 const Select = (props) => {
- return <select>
- </select>
+ {console.log('[Select props]', props)}
+ return (
+   <div>
+     <select name="" id="">
+      { props.rovs && props.rovs.options.map((e, i)=>{
+       <option value={e}>{e}</option>
+       })}
+       }
+     </select>
+   </div>
+  )
 }
-export default select;
+export default Select;

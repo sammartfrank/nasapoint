@@ -48,7 +48,7 @@ class App extends Component {
         <Apod />
         <Rover />
         <ImComp />
-       { showPanel && <ScrollBut />} 
+       { showPanel && <ScrollBut state={showPanel}/>} 
     </div>
    )
  }

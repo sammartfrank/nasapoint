@@ -4,6 +4,8 @@ import LoadingRover from '../Loading/LoadingRover.js';
 import Modal from '../Modal/Modal.js';
 import './rovers.css';
 
+const rovs = {options:['curiosity','opportunity', 'spirit']};
+
 class Rovers extends Component {
   constructor(props) {
   super(props);
@@ -15,7 +17,6 @@ class Rovers extends Component {
    values: {},
    show: false
   }
-
   this.handleChange = this.handleChange.bind(this);
   this.handleCamera = this.handleCamera.bind(this);
   this.handleInputChange = this.handleInputChange.bind(this)
@@ -23,7 +24,6 @@ class Rovers extends Component {
   this.showModal = this.showModal.bind(this);
   this.hideModal = this.hideModal.bind(this);
   }
-
   showModal() {
     this.setState({
       show: true
@@ -69,7 +69,9 @@ class Rovers extends Component {
    return (
     <div className="rover-container">
      <h1>Rover Photos</h1>
+
      <h2>Select Rover</h2>
+     {/* <Select rovs={rovs}/> */}
      <select value={rover} onChange={this.handleChange} name="rovers" id="rovers">
       <option value="curiosity">Curiosity</option>
       <option value="opportunity">Opportunity</option>
@@ -96,8 +98,14 @@ class Rovers extends Component {
        {loadingB && <LoadingRover rover={rover}/>}
       <div className="images">
        {values.photos && values.photos.map(p=> <div key={p.id} className="roverimg">
-        <img src={p.img_src} alt=""/>
+        <img onClick={this.showModal} src={p.img_src} id={p.id} alt=""/>
+        {show && <Modal show={show} url={p.img_src} hidemodal={this.hideModal}></Modal>}
        </div>)}
+
+        {/* {values.photos && values.photos.map(p=>  */}
+        {/*   <RoverModal url={p.img_src} key={p.id} />   */}
+        {/* )} */}
+
        {values.photos < 1 && <div>
          <h3>No Photos to show</h3>
        </div>}

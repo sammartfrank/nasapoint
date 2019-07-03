@@ -41,10 +41,9 @@ class Apod extends Component {
    <div className='apod-container'>
       {loading && <LoadingApod  />}
       <h1>{apod.title}</h1>
-      <div className="img">
-        {show && <Modal show={show} hidemodal={this.hideModal} url={apod.hdurl}>
-        </Modal>}
-       <img onClick={this.showModal} src={apod.hdurl} alt=""/>
+      <div className="imge">
+        {show && <Modal show={show} hidemodal={this.hideModal} url={apod.hdurl}></Modal>}
+        {apod.media_type === 'video' ? <iframe src={apod.url}></iframe> : <img onClick={this.showModal} src={apod.hdurl} alt=""/>}
       </div>
       <p>{apod.explanation}</p>
    </div>
