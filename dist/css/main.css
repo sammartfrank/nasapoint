@@ -34,10 +34,22 @@
 		transition: 1.3s;
 
 	}
+	.darksq {
+		height: 5px;
+		background: rgba(0, 0, 198, 0.2);
+		border-bottom: 1px solid white;
+		transition: 1.3s;
+
+	}
 .go {
 	display: block;
 	transition: 2.2s;
 	transform: translateX(1800px);
+}
+
+.fish {
+	transition: 2.2s;
+	transform: translateX(-1800px);
 }
 
 
@@ -51,7 +63,7 @@
 }
 .sticky h1 {
  transition: .1s;
- transform: scale(0);
+ transform: scale(0)
 }
 
 .sticky .logo {
@@ -64,6 +76,9 @@
  .sticky .logo {
   left: -45em;
  }
+
+	
+
 }
 
 
