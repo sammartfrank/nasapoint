@@ -10,4 +10,17 @@
  font-weight: 600;
  box-shadow: 0px 8px 0px 0px rgba(0,0,0,0.1);
  color: #033280;
+ animation: fade-in-right 1s ease;
+}
+
+@keyframes fade-in-right {
+  0% {
+   transform: translateX(50px);
+   opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }

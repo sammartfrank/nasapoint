@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Modal from '../Modal/Modal.js';
 import LoadingApod from '../Loading/LoadingApod.js';
 import { getApod } from '../../utils/Nasapi.js';
+import Modal from '../Modal/Modal.js';
 import './Apod.css';
 
 
@@ -23,9 +23,10 @@ class Apod extends Component {
   })
  }
  hideModal() {
-  this.setState({
-    show: false
-  })
+    this.setState({
+      show: false
+    })
+  }
  }
  componentDidMount() {
   getApod().then( data => {
@@ -35,20 +36,26 @@ class Apod extends Component {
    });
   });
  }
+ showModal() {
+  this.setState({
+    show: true
+  })
+ }
+  hideModal() {
+  this.setState({
+    show: false
+  })
+ }
  render() {
-  const { apod, loading, show } = this.state;
-  {console.log('[Apod Rendering')}
+  {console.log('[Apod Rendering]')}
+  const { apod, loading, visible, show } = this.state;
   return (
-   <div className="apod-container">
+   <div className='apod-container'>
       {loading && <LoadingApod  />}
       <h1>{apod.title}</h1>
-      <div>
-      <div className="video">
-        {apod.media_type === 'video' && <iframe src={apod.url} frameBorder="0"></iframe>}  
-      </div>  
-      {show ? <Modal show={show} handleClose={this.hideModal}>
-        <img onClick={this.hideModal}  src={apod.hdurl} alt=""/> 
-      </Modal> :  <img onClick={this.handleModal} src={apod.hdurl} alt=""/> } 
+      <div className="imge">
+        {show && <Modal show={show} hidemodal={this.hideModal} url={apod.hdurl}></Modal>}
+        {apod.media_type === 'video' ? <iframe src={apod.url}></iframe> : <img onClick={this.showModal} src={apod.hdurl} alt=""/>}
       </div>
       <p>{apod.explanation}</p>
    </div>

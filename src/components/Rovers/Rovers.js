@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { getImags } from '../../utils/Nasapi.js';
 import LoadingRover from '../Loading/LoadingRover.js';
-import Modal from '../Modal/Modal.js';
 import ImageTile from'./ImageTile.js';
 import './rovers.css';
+
+const rovs = {options:['curiosity','opportunity', 'spirit']};
 
 class Rovers extends Component {
   constructor(props) {
@@ -14,18 +15,28 @@ class Rovers extends Component {
    sol: 0,
    camera: 'fhaz',
    loadingB: false,
-   values: {}
+   values: {},
+   show: false
   }
-
   this.handleChange = this.handleChange.bind(this);
   this.handleCamera = this.handleCamera.bind(this);
   this.handleInputChange = this.handleInputChange.bind(this)
   this.handleClick = this.handleClick.bind(this);
   this.handleClear = this.handleClear.bind(this);
   }
-  handleClear(e) {
+  handleClear() {
     this.setState({
       values: {}
+  })
+  }
+  showModal() {
+    this.setState({
+      show: true
+    })
+  }
+  hideModal() {
+    this.setState({
+      show: false
     })
   }
   handleCamera(e) {
@@ -58,12 +69,14 @@ class Rovers extends Component {
    })
   }
   render() {
-   console.log('[Rover Rendering]', this.state);
+   {console.log('[Rover Rendering]', this.state);}   
    const { show, rover, sol, camera, loadingB, values } = this.state;
    return (
     <div className="rover-container">
      <h1>Rover Photos</h1>
+
      <h2>Select Rover</h2>
+     {/* <Select rovs={rovs}/> */}
      <select value={rover} onChange={this.handleChange} name="rovers" id="rovers">
       <option value="curiosity">Curiosity</option>
       <option value="opportunity">Opportunity</option>
@@ -88,7 +101,7 @@ class Rovers extends Component {
       <button onClick={this.handleClick}>Search Images</button>
       <button onClick={this.handleClear}>Clear</button>
       <br/>
-       {loadingB && <LoadingRover rover={this.state.rover}/>}
+       {loadingB && <LoadingRover rover={rover}/>}
       <div className="images">
        {values.photos && values.photos.map(p=> <ImageTile key={p.id} url={p.img_src} />)}
        {values.photos < 1 && <div>
@@ -97,7 +110,6 @@ class Rovers extends Component {
       </div>
     </div>
   );
-  }
  }
-
+}
 export default Rovers;

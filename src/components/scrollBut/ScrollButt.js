@@ -9,7 +9,7 @@ const handleClick = () => {
  })
 }
 
-const ScrollBut = () => {
+const ScrollBut = ({state}) => {
   return <button className="scrollBut" onClick={handleClick}>Top</button>
 }
 
