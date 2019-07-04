@@ -28,13 +28,18 @@
 
 	.redline {
 		display: none;
-		background: darkred;
+		background: darkblue;
 		height: 2px;
 		position: relative;
 		top: 5em;
+		transition: .2s;
+
 	}
 .go {
 	display: block;
+	transition: .2s;
+ transform: scale(1);
+
 }
 
 
