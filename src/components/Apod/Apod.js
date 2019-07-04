@@ -13,20 +13,8 @@ class Apod extends Component {
    loading: true,
    show:false
   }
-  this.handleModal = this.handleModal.bind(this);
+  this.showModal = this.showModal.bind(this);
   this.hideModal = this.hideModal.bind(this);
- }
-
- handleModal(e) {
-  this.setState({
-    show: true
-  })
- }
- hideModal() {
-    this.setState({
-      show: false
-    })
-  }
  }
  componentDidMount() {
   getApod().then( data => {
@@ -36,7 +24,7 @@ class Apod extends Component {
    });
   });
  }
- showModal() {
+ showModal(e) {
   this.setState({
     show: true
   })
@@ -48,13 +36,13 @@ class Apod extends Component {
  }
  render() {
   {console.log('[Apod Rendering]')}
-  const { apod, loading, visible, show } = this.state;
+  const { apod, loading, show } = this.state;
   return (
    <div className='apod-container'>
       {loading && <LoadingApod  />}
       <h1>{apod.title}</h1>
       <div className="imge">
-        {show && <Modal show={show} hidemodal={this.hideModal} url={apod.hdurl}></Modal>}
+        {show && <Modal show={show} hidemodal={this.hideModal}><img  style={{width: '100%'}} src={apod.hdurl} onClick={this.hideModal} alt=""/></Modal>}
         {apod.media_type === 'video' ? <iframe src={apod.url}></iframe> : <img onClick={this.showModal} src={apod.hdurl} alt=""/>}
       </div>
       <p>{apod.explanation}</p>
@@ -62,5 +50,4 @@ class Apod extends Component {
    )
  }
 }
-
 export default Apod;

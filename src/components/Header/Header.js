@@ -4,7 +4,8 @@ import './Header.css'
 
 const Header = ({state}) => {
  return (
-  <div className={ `header  ${state ? 'sticky' : '' }` }>
+  <div className={ `header  ${ state ? 'sticky' : '' }` }>
+  	<div className={`redline ${ state ? 'go' : ''}`}></div>
     <img className="logo" src={ig} alt=""/>
    <h1>NASA API POINT</h1>
   </div>

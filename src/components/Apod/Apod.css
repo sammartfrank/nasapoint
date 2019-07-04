@@ -32,44 +32,26 @@ iframe {
   width: 60%;
   margin: 0 auto;
  }
-<<<<<<< HEAD
- .apod-container img {
- width: 50%;
-	}
+
+ .apod-container h1 {
+ letter-spacing: .1em;
+}
+
 	.apod-container p {
-	 width: 50%;
+	 width: 80%;
 	}
+
+ .apod-container img {
+ width: 80%;
+	}
+
+	.apod-container img {
+  pointer-events: all;
+ }
+
 	.video iframe {
 		width: 50%;
 		margin: 0 auto;
 	}
-}
 
-
-/*
-
-.apod-container {
- text-align: center;
- margin: 0 auto;
- width: 100%
-=======
- .apod-container h1 {
- letter-spacing: .1em;
->>>>>>> 26cfd84498b88f1e11b71c78944c5099cc21f51c
-}
- .apod-container .img {
-  /*width: 75%;*/
-  margin: 0 auto;
- }
- .apod-container img {
-  pointer-events: all;
- }
-
- .apod-container p {
-  width: 90%;
- }
- iframe {
- width:90%;
- height: 450px;
-}
 }

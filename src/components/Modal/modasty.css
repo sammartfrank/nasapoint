@@ -14,21 +14,6 @@
     width: 55%;
     transform: translate(-50%,-50%);
 }
-.modal .modal-main img {
-  /*width: 100%;*/
-}
-
-.modal button {
-  position:absolute;
-  color: darkred;
-  font-weight:700;
-  background: transparent;
-  border: none;
-}
-.modal button:hover {
-  background:none;
-}
-
 .display-block {
   display: block;
 }

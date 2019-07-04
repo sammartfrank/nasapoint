@@ -26,6 +26,18 @@
  transition:1s;
 }
 
+	.redline {
+		display: none;
+		background: darkred;
+		height: 2px;
+		position: relative;
+		top: 5em;
+	}
+.go {
+	display: block;
+}
+
+
 .sticky {
  position: fixed;
  top:0;
@@ -45,11 +57,21 @@
 }
 
 
-
 @media (min-width: 768px) {
  .sticky .logo {
   left: -45em;
  }
-
 }
 
+
+@keyframes fade-in-right {
+	0 {
+			transform: translateX(-155px);
+			opacity: 0;
+	}
+	100% {
+		transform: translateX(0px);
+		opacity: 1;
+	}
+
+}
