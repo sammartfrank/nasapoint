@@ -27,19 +27,17 @@
 }
 
 	.redline {
-		display: none;
 		background: darkblue;
 		height: 2px;
 		position: relative;
 		top: 5em;
-		transition: .2s;
+		transition: 1.3s;
 
 	}
 .go {
 	display: block;
-	transition: .2s;
- transform: scale(1);
-
+	transition: 2.2s;
+	transform: translateX(1800px);
 }
 
 
