@@ -24,7 +24,6 @@ class ImageTile extends Component {
 	render() {
 		const { show } = this.state;
 		const { url } = this.props;
-		{console.log('[ImageTile Rendering]')}
 		return (
 			<div className="roverimg">
 				{show && <Modal show={show}><img src={url} onClick={this.hideModal} alt=""/></Modal>}

@@ -69,7 +69,6 @@ class Rovers extends Component {
    })
   }
   render() {
-   {console.log('[Rover Rendering]', this.state);}   
    const { show, rover, sol, camera, loadingB, values } = this.state;
    return (
     <div className="rover-container">

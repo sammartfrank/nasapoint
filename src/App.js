@@ -31,7 +31,6 @@ componentWillUnmount(){
 }
 
  handleScroll(e) {
-  console.log(e.target)
   this.setState({
     showPanel: e.currentTarget.pageYOffset > 200
   })
@@ -43,7 +42,6 @@ componentWillUnmount(){
 
  render() {
   const { showPanel } = this.state
-  {console.log('[App Rendering]', this.state)}
   return (
     <div className="container">
         <Header state={showPanel}/>

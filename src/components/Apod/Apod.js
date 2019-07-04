@@ -35,7 +35,6 @@ class Apod extends Component {
   })
  }
  render() {
-  {console.log('[Apod Rendering]')}
   const { apod, loading, show } = this.state;
   return (
    <div className='apod-container'>

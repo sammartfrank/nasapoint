@@ -8,7 +8,6 @@ const Modal = ({show, children}) => {
 	return (
 		<div className={showHideClassName}>
 			<section className="modal-main">
-				{console.log('[Modal Rendering]')}
 				{children}
 			</section>
 		</div>
