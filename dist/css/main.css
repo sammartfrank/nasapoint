@@ -9,6 +9,7 @@
  width: 100%;
  text-align:center;
  transition: .8s;
+ overflow: hidden;
 }
 .header h1 {
  font-size: 2rem;
@@ -26,9 +27,18 @@
  transition:1s;
 }
 .earth {
-	position: relative;
-}
+	position: absolute;
+	z-index: -1005;
+	left: 0;
+	top: 2.6em;
+	opacity: 0.1;
+	transition: 2s;
 
+}
+.up {
+	transform: translateY(600px);
+	transition: 3.6s;
+}
 	.redline {
 		background: darkblue;
 		height: 2px;
@@ -71,6 +81,7 @@
 
 .sticky .logo {
  left:-6.5em;
+ top: -0.1em;
  transform: scale(0.75);
 }
 
@@ -79,7 +90,9 @@
  .sticky .logo {
   left: -45em;
  }
-
+.earth {
+	left: 2em;
+}
 	
 
 }
@@ -107,11 +120,15 @@
 }
 .modal .modal-main {
     position:fixed;
+    color: white;
     top:50%;
     left:50%;
     background: transparent;
     width: 55%;
     transform: translate(-50%,-50%);
+}
+.modal .modal-main img {
+  width: 80%;
 }
 .display-block {
   display: block;
@@ -183,6 +200,10 @@ iframe {
  width: 75%;
  margin: 0 auto;
 }
+.rover-container p {
+	text-align: justify;
+	letter-spacing: 1px;
+}
 
 .roverimg img {
  margin-top: 1em;
@@ -210,7 +231,10 @@ input {
  .roverimg img {
  pointer-events: all;
 }
-
+.rover-container p {
+	text-align: center;
+	letter-spacing: 1px;
+}
  .rover-container select {
   width: 50%;
   text-align:center;
