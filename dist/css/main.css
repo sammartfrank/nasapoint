@@ -25,6 +25,9 @@
  left: 0.2em;
  transition:1s;
 }
+.earth {
+	position: relative;
+}
 
 	.redline {
 		background: darkblue;

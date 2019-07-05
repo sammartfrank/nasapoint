@@ -70,6 +70,7 @@ class Rovers extends Component {
   }
   render() {
    const { show, rover, sol, camera, loadingB, values } = this.state;
+   {console.log('[Rovers]', values)}
    return (
     <div className="rover-container">
      <h1>Rover Photos</h1>
@@ -93,7 +94,8 @@ class Rovers extends Component {
       <option value="pancam">Panoramic Camera</option>
       <option value="minites">Miniature Thermal Emission Spectrometer</option>
      </select>
-     <h2>Set Martian Sol: (0-4000)</h2>
+     <h2>Set Martian Sol: </h2>
+     <p>(Curiosity: 2450+ Sols, Opportunity: 5532 Sols, Spirit: 2234 Sols)</p>
       <input onChange={this.handleInputChange} value={sol} type="number"/>
       <br/>
       <br/>

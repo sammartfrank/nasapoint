@@ -9,6 +9,7 @@
  width: 100%;
  text-align:center;
  transition: .8s;
+ overflow: hidden;
 }
 .header h1 {
  font-size: 2rem;
@@ -25,7 +26,19 @@
  left: 0.2em;
  transition:1s;
 }
+.earth {
+	position: absolute;
+	z-index: -1005;
+	left: 0;
+	top: 2.6em;
+	opacity: 0.1;
+	transition: 2s;
 
+}
+.up {
+	transform: translateY(600px);
+	transition: 3.6s;
+}
 	.redline {
 		background: darkblue;
 		height: 2px;
@@ -68,6 +81,7 @@
 
 .sticky .logo {
  left:-6.5em;
+ top: -0.1em;
  transform: scale(0.75);
 }
 
@@ -76,7 +90,9 @@
  .sticky .logo {
   left: -45em;
  }
-
+.earth {
+	left: 2em;
+}
 	
 
 }

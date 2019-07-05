@@ -4,6 +4,10 @@
  width: 75%;
  margin: 0 auto;
 }
+.rover-container p {
+	text-align: justify;
+	letter-spacing: 1px;
+}
 
 .roverimg img {
  margin-top: 1em;
@@ -31,7 +35,10 @@ input {
  .roverimg img {
  pointer-events: all;
 }
-
+.rover-container p {
+	text-align: center;
+	letter-spacing: 1px;
+}
  .rover-container select {
   width: 50%;
   text-align:center;

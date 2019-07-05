@@ -9,6 +9,7 @@ const Modal = ({show, children}) => {
 		<div className={showHideClassName}>
 			<section className="modal-main">
 				{children}
+				<p>[ Click in the image to Exit ]</p>
 			</section>
 		</div>
 		)
