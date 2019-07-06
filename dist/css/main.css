@@ -29,8 +29,8 @@
 .earth {
 	position: absolute;
 	z-index: -1005;
-	left: 0;
 	top: 2.6em;
+	left: -1em;
 	opacity: 0.1;
 	transition: 2s;
 
@@ -88,15 +88,20 @@
 
 @media (min-width: 768px) {
  .sticky .logo {
+  left: -20em;
+ }
+	.earth {
+		left: 13em;
+	}
+}
+@media (min-width: 1440px) {
+	 .sticky .logo {
   left: -45em;
  }
-.earth {
-	left: 2em;
+ .earth {
+ 	left: 38.5em;
+ }
 }
-	
-
-}
-
 
 @keyframes fade-in-right {
 	0 {
@@ -125,10 +130,15 @@
     left:50%;
     background: transparent;
     width: 55%;
+    height: 90%;
     transform: translate(-50%,-50%);
 }
 .modal .modal-main img {
-  width: 80%;
+  max-width: 75%;
+  max-height: 100%;
+}
+.modal .modal-main p {
+  margin: 0 auto;
 }
 .display-block {
   display: block;
@@ -171,6 +181,10 @@ iframe {
   width: 60%;
   margin: 0 auto;
  }
+ .apod-container img {
+ 		max-width: 80%;
+ 		height: auto;
+ }
 
  .apod-container h1 {
  letter-spacing: .1em;
@@ -178,6 +192,7 @@ iframe {
 
 	.apod-container p {
 	 width: 80%;
+	 text-align: center;
 	}
 
  .apod-container img {

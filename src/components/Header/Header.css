@@ -29,8 +29,8 @@
 .earth {
 	position: absolute;
 	z-index: -1005;
-	left: 0;
 	top: 2.6em;
+	left: -1em;
 	opacity: 0.1;
 	transition: 2s;
 
@@ -88,15 +88,20 @@
 
 @media (min-width: 768px) {
  .sticky .logo {
+  left: -20em;
+ }
+	.earth {
+		left: 13em;
+	}
+}
+@media (min-width: 1440px) {
+	 .sticky .logo {
   left: -45em;
  }
-.earth {
-	left: 2em;
+ .earth {
+ 	left: 38.5em;
+ }
 }
-	
-
-}
-
 
 @keyframes fade-in-right {
 	0 {

@@ -38,7 +38,6 @@ class Apod extends Component {
   const { apod, loading, show } = this.state;
   return (
    <div className='apod-container'>
-    {console.log('[Apod]', apod)}
       {loading && <LoadingApod  />}
       <h1>{apod.title}</h1>
       <div className="imge">

@@ -32,6 +32,10 @@ iframe {
   width: 60%;
   margin: 0 auto;
  }
+ .apod-container img {
+ 		max-width: 80%;
+ 		height: auto;
+ }
 
  .apod-container h1 {
  letter-spacing: .1em;
@@ -39,6 +43,7 @@ iframe {
 
 	.apod-container p {
 	 width: 80%;
+	 text-align: center;
 	}
 
  .apod-container img {

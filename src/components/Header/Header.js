@@ -8,7 +8,7 @@ const Header = ({state}) => {
   <div className={ `header  ${ state ? 'sticky' : '' }` }>
   	<div className={`redline ${ state ? 'go' : ''}`}></div>
   	<div className={`darksq ${ state ? 'fish' : ''}`}></div>
-    <img  className={`earth ${ state ? 'up' : ''}`} src={earth} alt=""/>
+    <img  className={`earth ${ state ? 'up' : ''}`} src={earth} alt="Earth"/>
     <img className="logo" src={ig} alt="NasaLogo"/>
    <h1>NASA API POINT</h1>
   </div>

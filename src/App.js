@@ -19,7 +19,8 @@ class App extends Component {
  }
 
  componentDidMount() {
-  window.addEventListener('scroll', this.handleScroll)
+  window.addEventListener('scroll', this.handleScroll);
+  console.log('%c Hello fellow programmer!!, this website was built by Franco Sammartino. Any info you need hit him up through github @sammartfrank. Cheers', 'background: #00000; color: #ffff00')
  }
 
  shouldComponentUpdate(newProps, newState) {
