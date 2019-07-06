@@ -9,7 +9,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'js/[name].js'
   },
-   module: {
+   module: { 
     rules: [
      {
       test: /\.(js|jsx)$/,
@@ -42,16 +42,11 @@ module.exports = {
     {
       test: /\.(jpg|jpeg|png|gif|ico)$/,
       exclude: /node_modules/,
-      loader: 'file-loader',
-      options: {
-        name: '[name].[ext]',
-        outputPath: 'images/',
-        publicPath: 'dist/images'
-      }
-    }
-    ]
-   },
-  plugins: [
+      loader: 'file-loader'
+    },
+   ]
+ },
+   plugins: [
     new HtmlWebpackPlugin({
      template: "./public/index.html",
      filename: "./index.html",
@@ -61,5 +56,5 @@ module.exports = {
       filename: 'css/[name].css',
       chunkFilename: '[id].css',
     })
-  ]
-};
+   ]
+  }
