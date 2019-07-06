@@ -48,9 +48,9 @@ class ImComp extends Component {
        <button onClick={this.handleQuery}>Search</button>
       </form>
       {loading && <LoadingImgs keyword={q}/> }
-      <h2>Results: </h2>
       <div className="queryImg">
        {queryRes.items && queryRes.items.map(item => <div key={item.data[0].nasa_id}>
+          <h2>Results: </h2>
           <h2>{item.data[0].title}</h2>
           {item.links && <img src={item.links[0].href}></img>}
           <p>{(item.data[0].description).replace(/^(?:[a-z]*?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/gi, "")}</p>
