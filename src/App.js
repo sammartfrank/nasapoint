@@ -22,6 +22,7 @@ class App extends Component {
   window.addEventListener('scroll', this.handleScroll);
   console.log('%cHello fellow programmer!!, this website was built by Franco Sammartino. Any info you need hit him up through github @sammartfrank. Cheers', 'background: #00000; color: #ffff00');
   console.log('%cSpecial Thanks to the NASA for the API provided', 'background: #00000; color: #ff0000');
+  console.log('%cSave the planet', 'background: #00000; color: #00ff00');
  }
 
  shouldComponentUpdate(newProps, newState) {
