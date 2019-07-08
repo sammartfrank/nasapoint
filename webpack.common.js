@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -23,7 +24,8 @@ module.exports = {
 			{
       test: /\.html$/,
       use: {
-         loader: "html-loader"
+         loader: "html-loader",
+									options: { minimize: true }
       }
    },
    {
@@ -46,6 +48,11 @@ module.exports = {
     },
 		],
 	},
+	optimization: {
+		splitChunks: {
+				chunks: 'all'
+		}
+	},
 	plugins: [
 		new CleanWebpackPlugin(),
 		new HtmlWebpackPlugin({
@@ -58,6 +65,7 @@ module.exports = {
 			filename: 'css/[name].bundle.css',
 			chunkFilename: '[id].bundle.css'
 		}),
+		new webpack.HotModuleReplacementPlugin()
 	]
 
 }

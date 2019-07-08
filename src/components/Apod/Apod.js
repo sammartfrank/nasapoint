@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import LoadingApod from '../Loading/LoadingApod.js';
+import Loading from '../Loading/Loader.js';
 import { getApod } from '../../utils/Nasapi.js';
 import Modal from '../Modal/Modal.js';
 import './Apod.css';
@@ -38,7 +38,7 @@ class Apod extends Component {
   const { apod, loading, show } = this.state;
   return (
    <div className='apod-container'>
-      {loading && <LoadingApod  />}
+      {loading && <Loading text='Taking a Picture' speed={200} />}
       <h1>{apod.title}</h1>
       <div className="imge">
         {show && <Modal show={show} hidemodal={this.hideModal}><img  style={{width: '100%'}} src={apod.hdurl} onClick={this.hideModal} alt=""/></Modal>}
