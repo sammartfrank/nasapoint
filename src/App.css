@@ -1,4 +1,4 @@
-html {
+ html {
  height: 100vh;
  width: 100vw;
  text-align: center;
@@ -9,6 +9,7 @@ body {
  color: darkblue;
  font-family: 'Dosis', sans-serif;
 }
+
 .loader {
  text-align: center;
  margin: 0 auto;
